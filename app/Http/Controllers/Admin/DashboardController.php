@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\AuthenticateLog;
+use App\BookType;
+use App\Book;
+use App\BookUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -21,12 +24,19 @@ class DashboardController extends Controller
         $total_admins = count(User::where('role_id', 1)->get());
         $total_operators = count(User::where('role_id', 2)->get());
         $total_members = count(User::where('role_id', 3)->get());
+        $total_categories = count(BookType::all()); 
+        $total_Books = count(Book::all()); 
+        $total_setuju = count(BookUser::where('status', 1)->get());
+        $total_belum = count(BookUser::where('status', 2)->get());
+        $total_tsetuju = count(BookUser::where('status', 3)->get());
+        $total_bukusem= count(BookUser::all()); 
+        
 
         // Authenticate User Log
         $authenticate_logs = AuthenticateLog::latest()->take(5)->get();
         $login_logs = AuthenticateLog::latest()->get();
 
-        return view('admin.dashboard.index', compact('total_users', 'total_admins', 'total_operators', 'total_members', 'authenticate_logs', 'login_logs'));
+        return view('admin.dashboard.index', compact('total_users', 'total_admins', 'total_operators', 'total_members', 'authenticate_logs', 'login_logs', 'total_categories', 'total_Books', 'total_setuju', 'total_belum', 'total_tsetuju', 'total_bukusem'));
     }
 
     /**
