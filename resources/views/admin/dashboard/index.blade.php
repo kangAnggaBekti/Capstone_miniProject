@@ -56,45 +56,43 @@
       </button>
     </div>
   </div>
-  <!-- <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-statistic-2">
-      <div class="card-chart">
-        <canvas id="balance-chart" height="80"></canvas>
-      </div>
-      <div class="card-icon shadow-primary bg-primary">
-        <i class="fas fa-book"></i>
-      </div>
-      <div class="card-wrap">
-        <div class="card-header">
-          <h4>Balance</h4>
+  
+  <div class="container mt-5">
+  <div class="row justify-content-center">          
+    <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+          <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-globe"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Jumlah Kategori Genre</span>
+            {{-- <span class="info-box-number">{{ $countkategori }}</span> --}}
+          </div>
         </div>
-        <div class="card-body">
-          $187,13
+    </div>
+         
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="info-box mb-3">
+        <span class="info-box-icon bg-success elevation-1"><i class="fas fa-book"></i></span>
+          <div class="info-box-content">
+          <span class="info-box-text">Jumlah Novel</span>
+          {{-- <span class="info-box-number">{{ $countartikel }}</span> --}}
+          </div>
         </div>
+      </div>
+    
+    <div class="col-12 col-sm-6 col-md-3">
+      <div class="info-box mb-3">
+        <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+          <div class="info-box-content">
+          <span class="info-box-text">Jumlah User</span>
+          {{-- <span class="info-box-number">{{ $countuser }}</span> --}}
+          </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-4 col-md-4 col-sm-12">
-    <div class="card card-statistic-2">
-      <div class="card-chart">
-        <canvas id="sales-chart" height="80"></canvas>
-      </div>
-      <div class="card-icon shadow-primary bg-primary">
-        <i class="fas fa-shopping-bag"></i>
-      </div>
-      <div class="card-wrap">
-        <div class="card-header">
-          <h4>Sales</h4>
-        </div>
-        <div class="card-body">
-          4,732
-        </div>
-      </div>
-    </div>
-  </div> -->
 </div>
-@endsection
 
+@endsection
+</div>
 @push('modal')
 @include('admin.dashboard.modal.show')
 @endpush

@@ -16,6 +16,7 @@
           <tr>
             <th>#</th>
             <th>Nomor Buku</th>
+            <th>Sampul Buku</th>
             <th>Judul Buku</th>
             <th>Penerbit</th>
             <th>Aksi</th>
@@ -26,6 +27,7 @@
           <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $book->book_number }}</td>
+            <td><img src="{{ asset($book->image) }}" class="img-thumbnail" alt="{{ $book->title }}" style="width: 150px; height: auto;"></td>
             <td>{{ Str::limit($book->title, 40, '...') }}</td>
             <td>{{ $book->publisher }}</td>
             <td>
