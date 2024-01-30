@@ -36,7 +36,7 @@
       </div>
     </div>
   </div>
-
+  
   <div class="col-lg-8 col-md-8 col-sm-12">
     <div class="card px-2 py-3">
       <h5 class="mx-2">Log Login Pengguna</h5>
@@ -56,6 +56,7 @@
       </button>
     </div>
   </div>
+<<<<<<< HEAD
   
   <div class="container mt-5">
   <div class="row justify-content-center">          
@@ -89,6 +90,9 @@
       </div>
     </div>
   </div>
+=======
+
+>>>>>>> be37fb194cf5306145359c7f8d2d7f3ee40427a9
 </div>
 
 @endsection

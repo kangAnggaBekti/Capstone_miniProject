@@ -1,10 +1,13 @@
 <footer class="main-footer">
   <div class="footer-left">
-    Copyright &copy; {{ date('Y') }} <div class="bullet"></div> Design By <a href="https://nauval.in/">Muhamad Nauval
-      Azhar</a>
+<<<<<<< HEAD
+    Copyright &copy; {{ date('Y') }} 
+=======
+    Copyright &copy; {{ date('Y') }} <div class="bullet"></div> Design By <a href="https://nauval.in/"></a>
+>>>>>>> 06c4b057c2a44083ba340feb4c151fa2a447fce9
   </div>
   <div class="footer-right">
-    2.3.0
+    Perpus
   </div>
 </footer>
 </div>
