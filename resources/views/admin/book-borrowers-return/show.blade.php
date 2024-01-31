@@ -1,4 +1,4 @@
-@extends('layouts.stisla.index', ['title' => 'Detail Peminjaman ' . $book_user->user->name, 'section_header' => 'Detail Peminjaman ' . $book_user->user->name])
+@extends('layouts.stisla.index', ['title' => 'Detail Pengembalian ' . $book_user->user->name, 'section_header' => 'Detail Pengembalian Buku a.n ' . $book_user->user->name])
 
 @section('content')
 <div class="row">
@@ -40,12 +40,17 @@
             <td>:</td>
             @if($book_user->status === 1)
             <td class="text-success text-wrap">Disetujui</td>
-            @elseif($book_user->status === 2)
-            <td class="text-warning text-wrap">Belum disetujui</td>
             @else
             <td class="text-danger text-wrap">Tidak disetujui</td>
             @endif
           </tr>
+          <tr>
+            <td>Tanggal Pengembalian Buku</td>
+            <td>:</td>
+            <td class="text-wrap">
+                <input type="date" name="tanggal_pengembalian_buku" value="{{ date_format(date_create($book_user->date_return), 'Y-m-d' ) }}">
+            </td>
+        </tr>        
         </table>
     </div>
   </div>
@@ -55,9 +60,8 @@
       <img src="{{ asset($book_user->book->image) }}" class="img-thumbnail" alt="{{ $book_user->book->name }}">
     </div>
     <div class="py-4">
-      <a href="{{ route('admin.book-borrowers.index') }}" class="btn btn-primary">Kembali</a>
-      <button type="submit" class="btn btn-success" data-id="{{ $book_user->id }}" id="book-approved-button">Setujui</button>
-      <button type="submit" class="btn btn-danger" data-id="{{ $book_user->id }}" id="book-not-approved-button">Tidak menyetujui</button>
+      <a href="{{ route('admin.book-borrowers-return.index') }}" class="btn btn-primary">Kembali</a>
+      <button type="submit" class="btn btn-success" data-id="{{ $book_user->id }}" id="book-approved-button">Simpan Perubahan</button>
     </div>
 
     </form>
@@ -67,8 +71,8 @@
 @endsection
 
 @push('modal')
-@include('admin.book-borrowers.modal.user.show');
-@include('admin.book-borrowers.modal.book.show')
+@include('admin.book-borrowers-return.modal.user.show');
+@include('admin.book-borrowers-return.modal.book.show')
 @endpush
 
 @push('js')

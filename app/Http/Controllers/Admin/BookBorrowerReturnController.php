@@ -20,4 +20,20 @@ class BookBorrowerReturnController extends Controller
 
         return view('admin.book-borrowers-return.show', compact('book_user'));
     }
+
+    public function update(Request $request, $id)
+{
+    $bookUser = BookUser::find($id);
+
+    // Validate and update the date_return value
+    $request->validate([
+        'tanggal_pengembalian_buku' => 'required|date',
+    ]);
+
+    $bookUser->date_return = $request->input('tanggal_pengembalian_buku');
+    $bookUser->save();
+
+    // Redirect or respond as needed
+}
+
 }

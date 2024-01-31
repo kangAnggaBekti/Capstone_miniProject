@@ -25,7 +25,7 @@
         <a class="nav-link" href="{{ route('admin.books.index') }}"><i class="fas fa-book"></i> <span>Buku</span></a>
       </li>
       <li
-        class="nav-item dropdown {{ (Request::segment(2) === 'book-borrowers' ? 'active' : '') || Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
+        class="nav-item dropdown {{ (Request::segment(2) === 'book-borrowers' ? 'active' : '') || (Request::segment(2) === 'book-borrowers-history' ? 'active' : '') || Request::segment(2) === 'book-borrowers-return' ? 'active' : ''}}">
         <a href="#" class="nav-link has-dropdown"><i class="fas fa-book-reader"></i> <span>Peminjaman</span></a>
         <ul class="dropdown-menu">
           <li class="{{ Request::segment(2) === 'book-borrowers' ? 'active' : '' }}">
@@ -39,6 +39,18 @@
           </li>
         </ul>     
       </li>
+      <li
+      class="nav-item dropdown {{ (Request::segment(2) === 'book-borrowers' ? 'active' : '') || Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
+      <a href="#" class="nav-link has-dropdown"><i class="fas fa-book-reader"></i> <span>Free Stuff</span></a>
+      <ul class="dropdown-menu">
+        <li class="{{ Request::segment(2) === 'book-borrowers' ? 'active' : '' }}">
+          <a class="nav-link" href="https://drive.google.com/drive/folders/18ky915Fu-L1-au-COQOICACKIT2eSn36?usp=sharing">Free E-Book</a>
+        </li>
+        <li class="{{ Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
+          <a class="nav-link" href="https://mangaid.click/">Free Latest Manga Online</a>
+        </li>
+      </ul>
+    </li>   
       @else
       <div class="sidebar-brand">
         <a href="{{ route('anggota.dashboard.index') }}">Stisla</a>
@@ -61,19 +73,7 @@
               <a class="nav-link" href="{{ route('anggota.book-borrowers-history.index') }}">Histori Peminjaman Buku</a>
             </li>
           </ul>
-        </li>
-        <li
-        class="nav-item dropdown {{ (Request::segment(2) === 'book-borrowers' ? 'active' : '') || Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
-        <a href="#" class="nav-link has-dropdown"><i class="fas fa-book-reader"></i> <span>Free Stuff</span></a>
-        <ul class="dropdown-menu">
-          <li class="{{ Request::segment(2) === 'book-borrowers' ? 'active' : '' }}">
-            <a class="nav-link" href="https://drive.google.com/drive/folders/18ky915Fu-L1-au-COQOICACKIT2eSn36?usp=sharing">Free E-Book</a>
-          </li>
-          <li class="{{ Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
-            <a class="nav-link" href="https://mangaid.click/">Free Latest Manga Online</a>
-          </li>
-        </ul>
-      </li>      
+        </li>   
       </ul>
       @endif
     </ul>

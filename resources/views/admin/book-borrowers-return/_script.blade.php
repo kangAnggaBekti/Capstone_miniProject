@@ -11,6 +11,7 @@
       let date_start = $("#date_start_create").val();
       let date_end = $("#date_end_create").val();
       let notes = $("#notes_create").val();
+      let date_return = $('#date_return_create').val();
 
       $.ajax({
         url: "{{ route('admin.book-borrowers.store') }}",
@@ -21,7 +22,8 @@
           book_id: book_id,
           date_start: date_start,
           date_end: date_end,
-          notes: notes
+          notes: notes,
+          date_return: date_return;
         },
         success: function(data) {
           Swal.fire({
@@ -48,7 +50,6 @@
           }, 500)
         },
         error: function(data) {
-          console.log(data);
           Swal.fire("Gagal!", "Data gagal ditambahkan.", "warning");
         }
       });

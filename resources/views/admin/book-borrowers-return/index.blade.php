@@ -41,7 +41,7 @@
             </td>
           
             <td>
-              <a href="{{ route('admin.book-borrowers-history.show', $book_user->id) }}" data-id="{{ $book_user->id }}" class="btn btn-sm btn-info swal-show-a">
+              <a href="{{ route('admin.book-borrowers-return.show', $book_user->id) }}" data-id="{{ $book_user->id }}" class="btn btn-sm btn-info swal-show-a">
                 <i class="fas fa-info-circle"></i>
               </a>
             </td>

@@ -9,9 +9,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="text-center">
-          <img class="img img-thumbnail justify-content-center" src="" alt="" id="image_detail_show" height="100" width="100">
-        </div>
         <table class="table" id="show-user-table">
           <tr>
             <td>Judul Buku</td>
