@@ -37,7 +37,7 @@
           <li class="{{ Request::segment(2) === 'book-borrowers-return' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.book-borrowers-return.index') }}">Pengembalian Buku</a>
           </li>
-        </ul>
+        </ul>     
       </li>
       @else
       <div class="sidebar-brand">
@@ -62,6 +62,18 @@
             </li>
           </ul>
         </li>
+        <li
+        class="nav-item dropdown {{ (Request::segment(2) === 'book-borrowers' ? 'active' : '') || Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
+        <a href="#" class="nav-link has-dropdown"><i class="fas fa-book-reader"></i> <span>Free Stuff</span></a>
+        <ul class="dropdown-menu">
+          <li class="{{ Request::segment(2) === 'book-borrowers' ? 'active' : '' }}">
+            <a class="nav-link" href="https://drive.google.com/drive/folders/18ky915Fu-L1-au-COQOICACKIT2eSn36?usp=sharing">Free E-Book</a>
+          </li>
+          <li class="{{ Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
+            <a class="nav-link" href="https://mangaid.click/">Free Latest Manga Online</a>
+          </li>
+        </ul>
+      </li>      
       </ul>
       @endif
     </ul>
