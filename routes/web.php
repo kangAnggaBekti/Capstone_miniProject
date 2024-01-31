@@ -24,6 +24,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('/books', 'Admin\BookController');
     Route::resource('/book-borrowers', 'Admin\BookUserController');
     Route::resource('/book-borrowers-history', 'Admin\BookBorrowerHistoryController');
+    Route::resource('/book-borrowers-return', 'Admin\BookBorrowerReturnController');
 
     // Detail book on JSON
     Route::get('/book-json/{id}', 'Admin\JsonResponseController@detailBook')->name('json-book.show');

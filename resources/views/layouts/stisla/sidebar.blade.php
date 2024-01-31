@@ -34,6 +34,9 @@
           <li class="{{ Request::segment(2) === 'book-borrowers-history' ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('admin.book-borrowers-history.index') }}">Histori Peminjam Buku</a>
           </li>
+          <li class="{{ Request::segment(2) === 'book-borrowers-return' ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.book-borrowers-return.index') }}">Pengembalian Buku</a>
+          </li>
         </ul>
       </li>
       @else

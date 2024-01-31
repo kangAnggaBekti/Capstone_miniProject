@@ -48,6 +48,7 @@ class BookUserController extends Controller
         $book_user->date_start = $request->date_start;
         $book_user->date_end = $request->date_end;
         $book_user->notes = $request->notes;
+        $book_user->date_return = $request->date_return;
         $book_user->status = 2;
         $book_user->save();
 
