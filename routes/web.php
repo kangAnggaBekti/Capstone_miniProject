@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\BookBorrowerReturnController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -25,6 +26,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('/book-borrowers', 'Admin\BookUserController');
     Route::resource('/book-borrowers-history', 'Admin\BookBorrowerHistoryController');
     Route::resource('/book-borrowers-return', 'Admin\BookBorrowerReturnController');
+    Route::put('/admin/book-borrowers-return/{id}', [BookBorrowerReturnController::class, 'updateReturnDate'])
+    ->name('admin.book-borrowers-return.update');
 
     // Detail book on JSON
     Route::get('/book-json/{id}', 'Admin\JsonResponseController@detailBook')->name('json-book.show');

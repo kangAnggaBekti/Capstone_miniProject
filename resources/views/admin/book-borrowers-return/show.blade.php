@@ -48,9 +48,17 @@
             <td>Tanggal Pengembalian Buku</td>
             <td>:</td>
             <td class="text-wrap">
+              <form action="{{ route('admin.book-borrowers-return.update', $book_user->id) }}" method="POST" class="book_borrower_form">
+                @csrf
+                @method('PUT')
                 <input type="date" name="tanggal_pengembalian_buku" value="{{ date_format(date_create($book_user->date_return), 'Y-m-d' ) }}">
+            </form>         
             </td>
-        </tr>        
+        </tr>
+        <tr>
+          <td>Aksi</td>
+          <td>:</td>
+          <td><button type="submit" class="btn btn-success" id="book-approved-button">Simpan Tanggal Pengembalian Buku</button></td>        
         </table>
     </div>
   </div>
@@ -59,10 +67,10 @@
     <div class="card">
       <img src="{{ asset($book_user->book->image) }}" class="img-thumbnail" alt="{{ $book_user->book->name }}">
     </div>
-    <div class="py-4">
+    {{-- <div class="py-4">
       <a href="{{ route('admin.book-borrowers-return.index') }}" class="btn btn-primary">Kembali</a>
       <button type="submit" class="btn btn-success" data-id="{{ $book_user->id }}" id="book-approved-button">Simpan Perubahan</button>
-    </div>
+    </div> --}}
 
     </form>
 
@@ -75,7 +83,7 @@
 @include('admin.book-borrowers-return.modal.book.show')
 @endpush
 
-@push('js')
+{{-- @push('js')
 <script>
   $(document).ready(function() {
     $("#book-swal-show-button").click(function() {
@@ -97,6 +105,7 @@
           let book_type_name = data.data.book_type_name;
           let languages = data.data.languages;
           let date_of_added = data.data.date_of_added;
+          let date_return = data.data.date_return;
           let url = "{{ asset('') }}";
 
           $("#image_detail_show").attr("src", url + image);
@@ -267,4 +276,4 @@
     });
   });
 </script>
-@endpush
+@endpush --}}

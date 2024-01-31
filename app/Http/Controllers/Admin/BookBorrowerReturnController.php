@@ -22,18 +22,22 @@ class BookBorrowerReturnController extends Controller
     }
 
     public function update(Request $request, $id)
-{
-    $bookUser = BookUser::find($id);
+    {
+        // Validate the request if needed
+        $request->validate([
+            'tanggal_pengembalian_buku' => 'required|date',
+        ]);
 
-    // Validate and update the date_return value
-    $request->validate([
-        'tanggal_pengembalian_buku' => 'required|date',
-    ]);
+        // Find the BookUser record
+        $bookUser = BookUser::findOrFail($id);
 
-    $bookUser->date_return = $request->input('tanggal_pengembalian_buku');
-    $bookUser->save();
+        // Update the return date
+        $bookUser->update([
+            'date_return' => $request->input('tanggal_pengembalian_buku'),
+        ]);
 
-    // Redirect or respond as needed
-}
+        // Redirect back or do something else
+        return redirect()->route('admin.book-borrowers-return.index')->with('success', 'Return date updated successfully');
+    }
 
 }
