@@ -28,8 +28,8 @@
             <td>{{ $loop->iteration }}</td>
             <td>{{ $book_user->user->name }}</td>
             <td>{{ Str::limit($book_user->book->title, 40, '...') }}</td>
-            <td>{{ date_format(date_create($book_user->date_start), 'd-m-Y') }}</td>
-            <td>{{ date_format(date_create($book_user->date_end), 'd-m-Y') }}</td>
+            <td>{{ \Carbon\Carbon::parse($book_user->date_start)->locale('id')->isoFormat('D MMMM Y') }}</td>
+            <td>{{ \Carbon\Carbon::parse($book_user->date_end)->locale('id')->isoFormat('D MMMM Y') }}</td>            
             <td>
               <a href="{{ route('admin.book-borrowers.show', $book_user->id) }}" data-id="{{ $book_user->id }}" class="btn btn-sm btn-info swal-show-a">
                 <i class="fas fa-info-circle"></i>

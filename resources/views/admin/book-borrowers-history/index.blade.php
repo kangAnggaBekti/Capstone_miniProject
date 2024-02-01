@@ -26,7 +26,7 @@
             @else
             <td class="badge badge-pill badge-danger shadow-sm my-2" data-toggle="tooltip" data-placement="top" title="Tidak disetujui">Tidak disetujui</td>
             @endif
-            <td>{{ date_format(date_create($book_user->updated_at), 'd-m-Y, H:i') }}</td>
+            <td>{{ \Carbon\Carbon::parse($book_user->updated_at)->locale('id')->isoFormat('D MMMM Y', 'Do MMMM YYYY') }}</td>
             <td>
               <a href="{{ route('admin.book-borrowers-history.show', $book_user->id) }}" data-id="{{ $book_user->id }}" class="btn btn-sm btn-info swal-show-a">
                 <i class="fas fa-info-circle"></i>

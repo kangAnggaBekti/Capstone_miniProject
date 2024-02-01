@@ -31,7 +31,7 @@
             @endif
             <td>{{ \Carbon\Carbon::parse($book_user->date_start)->locale('id')->isoFormat('D MMMM Y') }}</td>
             <td>{{ \Carbon\Carbon::parse($book_user->date_end)->locale('id')->isoFormat('D MMMM Y') }}</td>
-            <td>{{ \Carbon\Carbon::parse($book_user->updated_at)->locale('id')->isoFormat('D MMMM Y, HH:mm') }}</td>
+            <td>{{ \Carbon\Carbon::parse($book_user->updated_at)->locale('id')->isoFormat('D MMMM Y, HH:mm') }}</td> 
             <td>
               @if ($book_user->date_return)
                   @if (is_string($book_user->date_return))
