@@ -6,6 +6,9 @@ namespace App\Http\Controllers\Anggota;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Role;
+
 
 class UserController extends Controller
 {
@@ -46,7 +49,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editProfile()
+    public function edit()
     {
         // Fetch the authenticated user
         $user = Auth::user();
@@ -54,7 +57,7 @@ class UserController extends Controller
         return view('anggota.dashboard.edit', compact('user'));
     }
 
-    public function updateProfile(Request $request)
+    public function update(Request $request)
     {
         // Validation - Customize based on your requirements
         $request->validate([

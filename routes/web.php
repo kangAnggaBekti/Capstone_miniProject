@@ -62,6 +62,12 @@ Route::group(['prefix' => 'anggota', 'as' => 'anggota.', 'middleware' => ['auth'
     // Route::post('/editprofile', 'Anggota\UserController@updateProfile')->name('anggota.updateprofile');
     //Route::resource('/editprofile', 'Anggota\UserController');
     Route::get('/edit', 'Anggota\UserController@editProfile')->name('dashboard.edit');
+    Route::get('/edit-profile', 'Anggota\UserController@edit')->name('dashboard.edit');
+
+    Route::put('/update-profile', 'Anggota\UserController@update')->name('dashboard.update');
+   
+
+    
 
     
 
