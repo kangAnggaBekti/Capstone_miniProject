@@ -49,21 +49,28 @@
 @endsection
 @push('js')
 <script>
-  $('#user_update_button').click(function() {
-    Swal.fire({
-        title: "Proses",
-        text: "Sedang melakukan proses..",
-        icon: "info",
-        showConfirmButton: false,
-        allowOutsideClick: false,
-        allowEscapeKey: false,
-        onBeforeOpen: () => {
-            Swal.showLoading();
-        }
-    });
-});
-
-</script>
+   $('#user_update_button').click(function() {
+     Swal.fire({
+         title: "Proses",
+         text: "Sedang melakukan proses..",
+         icon: "info",
+         showConfirmButton: false,
+         allowOutsideClick: false,
+         allowEscapeKey: false,
+         onBeforeOpen: () => {
+             Swal.showLoading();
+         }
+     });
+ 
+     setTimeout(function () {
+         Swal.fire({
+             title: "Berhasil",
+             text: "Perubahan berhasil disimpan",
+             icon: "success",
+         });
+     }, 100);
+ });
+ </script>
 @endpush
 
 
