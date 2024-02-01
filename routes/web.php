@@ -10,7 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Http\Controllers\BookBorrowerReturnController;
+
+use App\Http\Controllers\Admin\BookBorrowerReturnController;
+use App\Http\Controllers\Anggota\UserController;
 
 Route::get('/', function () {
     return redirect()->route('login');
@@ -28,6 +30,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::resource('/book-borrowers-return', 'Admin\BookBorrowerReturnController');
     Route::put('/admin/book-borrowers-return/{id}', [BookBorrowerReturnController::class, 'updateReturnDate'])
     ->name('admin.book-borrowers-return.update');
+   
 
     // Detail book on JSON
     Route::get('/book-json/{id}', 'Admin\JsonResponseController@detailBook')->name('json-book.show');
@@ -42,6 +45,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
     Route::put('/book-not-approved/{id}', 'Admin\JsonResponseController@notApproveBookBorrower')->name('json-book.not-approved');
 });
 
+
 Route::group(['prefix' => 'anggota', 'as' => 'anggota.', 'middleware' => ['auth']], function () {
     Route::get('/dashboard', 'Anggota\DashboardController@index')->name('dashboard.index');
 
@@ -52,6 +56,15 @@ Route::group(['prefix' => 'anggota', 'as' => 'anggota.', 'middleware' => ['auth'
     Route::post('/book-borrowers-json', 'Anggota\JsonResponseController@store')->name('json-book-borrowers.store');
 
     Route::resource('/book-borrow', 'Anggota\BookBorrowController');
+
+    // Route::get('/anggota/edit-profile', 'Anggota\UserController@editProfile')->name('anggota.edit-profile');
+    // Route::get('/editprofile', 'Anggota\UserController@editProfile');
+    // Route::post('/editprofile', 'Anggota\UserController@updateProfile')->name('anggota.updateprofile');
+    //Route::resource('/editprofile', 'Anggota\UserController');
+    Route::get('/edit', 'Anggota\DashboardController@index')->name('dashboard.index');
+
+    
+
 });
 
 Auth::routes(['register' => false]);
