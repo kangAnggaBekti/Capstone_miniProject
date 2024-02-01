@@ -53,10 +53,10 @@
     </li>   
       @else
       <div class="sidebar-brand">
-        <a href="{{ route('anggota.dashboard.index') }}">Stisla</a>
+        <a href="{{ route('anggota.dashboard.index') }}">{{ config('app.name') }}</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
-        <a href="{{ route('anggota.dashboard.index') }}">St</a>
+        <a href="{{ route('anggota.dashboard.index') }}">{{ config('app.name') }}</a>
       </div>
       <ul class="sidebar-menu">
         <li class="{{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">

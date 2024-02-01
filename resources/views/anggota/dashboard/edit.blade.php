@@ -63,6 +63,14 @@
     });
 });
 
+setTimeout(function () {
+            Swal.fire({
+                title: "Berhasil",
+                text: "Perubahan berhasil disimpan",
+                icon: "success",
+            });
+        }, 100); 
+   
 
 </script>
 @endpush

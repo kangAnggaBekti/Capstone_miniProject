@@ -67,7 +67,7 @@ class UserController extends Controller
             // Add more fields as needed
         ]);
 
-        // Update the user profile
+        // Update the user profile 
         $user = Auth::user();
         $user->update([
             'name' => $request->input('name'),
