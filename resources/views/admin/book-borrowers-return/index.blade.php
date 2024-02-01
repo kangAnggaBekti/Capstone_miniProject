@@ -15,6 +15,7 @@
             <th>Tanggal Selesai Peminjaman</td>
             <th>Disetujui Pada</th>
             <th>Tanggal Pengembalian Buku</th>
+            <th>Keterangan</th>
             <th>Aksi</th>
           </tr>
         </thead>
@@ -42,8 +43,17 @@
               @else
                   Buku Masih Dipinjam
               @endif
+            </td>  
           </td>            
-          
+          <td style="@if ($book_user->date_return === null) @elseif ($book_user->date_return > $book_user->date_end) color: red; @elseif ($book_user->date_return <= $book_user->date_end) color: green; @endif">
+            @if ($book_user->date_return === null)
+                Proses
+            @elseif ($book_user->date_return > $book_user->date_end)
+                Terlambat -_-
+            @elseif ($book_user->date_return <= $book_user->date_end)
+                Tepat Waktu XD
+            @endif
+          </td>      
             <td>
               <a href="{{ route('admin.book-borrowers-return.show', $book_user->id) }}" data-id="{{ $book_user->id }}" class="btn btn-sm btn-info swal-show-a">
                 <i class="fas fa-info-circle"></i>
