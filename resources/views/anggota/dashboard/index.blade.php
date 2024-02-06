@@ -1,16 +1,42 @@
-@extends('layouts.stisla.index', ['title' => 'Anggota Dashboard', 'section_header' => 'Anggota Dashboard'])
+@extends('layouts.stisla.index', ['title' => 'Anggota Dashboard', 'section_header' => 'Selamat Datang Di Perpustakaan Gratis Kami'])
 
 @section('content')
 <div class="flexible-container" id="text-container">
-  <!-- You can replace the text content below with your own text -->
-  <h2><b>Selamat Datang Di Perpustakaan Gratis Kami</b></h2>
-  <br>
-  <h4><b>Silahkan pilih menu yang tersedia di sidebar</b></h4>
-  <br>
-  <h5><b>Tentang Kami</b></h5>
-  <br>
-  <h6>Kami menyadari bahwa minat baca bangsa indonesia saat ini masih dibawah rata-rata jika dibandingkan negara tetangga diasia tenggara.<br>
-  Maka dari itu kami membuat website perpustakaan gratis ini untuk anda dan menyediakan konten-konten yang bermanfaat secara gratis.</h6>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card card-statistic-2">
+        <div class="card-header">
+          <h5 class="card-title"><b>Tentang Kami</b></h5>
+        </div>
+        <div class="card-body">
+          <div class="card-stats text-justify">
+            <h6><b>Kami menyadari bahwa minat baca bangsa Indonesia saat ini masih di bawah rata-rata dibandingkan negara tetangga di Asia Tenggara.
+                Maka dari itu, kami membuat website perpustakaan gratis ini untuk Anda dan menyediakan konten-konten yang bermanfaat secara gratis.</b></h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card card-statistic-2">
+        <div class="card-header">
+          <h5 class="card-title"><b>Tata-Tertib</b></h5>
+        </div>
+        <div class="card-body">
+          <ul>
+            <h6>
+            <li>Harap untuk mengembalikan buku tepat waktu.</li>
+            <li>Harap tidak merusak buku yang dipinjam.</li>
+            <li>Harap merawat buku yang sudah dipinjam dengan baik.</li>
+            </h6>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>  
+  </div>
+
 </div><br>
 <div class="row">
   <div class="col-lg-4 col-md-4 col-sm-12">
@@ -45,12 +71,6 @@
     </div>
   </div>
 <br>
-<div class="flexible-container" id="text-container">
-  <h4><b>Tata-Tertib</b></h4>
-  <h6>- Harap untuk mengembalikan buku tepat waktu</h6><br>
-  <h6>- Harap tidak merusak buku yang dipinjam</h6><br>
-  <h6>- Harap merawat buku yang sudah dipinjam dengan baik</h6>
-</div>
 </div>
 
 

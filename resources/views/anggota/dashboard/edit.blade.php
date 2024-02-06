@@ -25,7 +25,7 @@
                           <td>Email</td>
                           <td>:</td>
                           <td class="text-wrap">
-                              <input type="email" class="form-control" name="email" id="email_edit" value="{{ $user->email }}">
+                              <input type="email" class="form-control" name="email" id="email_edit" value="{{ $user->email }} ">
                           </td>
                       </tr>
                       <tr>
@@ -47,13 +47,14 @@
       </div>
   </div>
 @endsection
+
 @push('js')
 <script>
    $('#user_update_button').click(function() {
      Swal.fire({
-         title: "Proses",
-         text: "Sedang melakukan proses..",
-         icon: "info",
+         title: "Success",
+         text: "Menyimpan data",
+         icon: "success",
          showConfirmButton: false,
          allowOutsideClick: false,
          allowEscapeKey: false,
@@ -61,14 +62,6 @@
              Swal.showLoading();
          }
      });
- 
-     setTimeout(function () {
-         Swal.fire({
-             title: "Berhasil",
-             text: "Perubahan berhasil disimpan",
-             icon: "success",
-         });
-     }, 100);
  });
  </script>
 @endpush
