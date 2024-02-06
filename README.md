@@ -1,9 +1,3 @@
-# WANGKAS
-
-Aplikasi pendataan uang kas dibuat dengan Framework Laravel 10. Dengan sistem pembayaran kas sekali selama seminggu. Aplikasi ini cocok untuk digunakan untuk di sekolah atau masing masing kelas. <br>
-
-Beberapa CRUD menggunakan modal dan AJAX untuk pengambilan data agar mengurangi penggunaan pindah halaman. Dan seluruh menu menggunakan DataTable Server Side Processing.
-
 ### Prasyarat
 
 Berikut beberapa hal yang perlu diinstal terlebih dahulu:
@@ -27,11 +21,9 @@ Berikut beberapa hal yang perlu diinstal terlebih dahulu:
 
 -   Clone repository ini
 
-```
-
 -   Install seluruh packages yang dibutuhkan
 
-```bashx`
+```bash
 composer install
 ```
 
